@@ -1,4 +1,22 @@
+# 🧠 Problem
 
+Given a number represented as an array of digits, generate the next smallest palindrome strictly greater than the given number.
+
+## 🚀 Approach
+
+Handle edge case → if all digits are 9, return 100...001
+
+Mirror left half → right half
+
+If mirrored number ≤ original:
+
+Add 1 to the middle
+
+Propagate carry towards left
+
+Mirror again
+
+```java
 class Solution {
 
     static int[] nextPalindrome(int[] num) {
@@ -78,4 +96,9 @@ class Solution {
     }
 
 }
+```
+## 📊 Complexity
 
+Time: O(n)
+
+Space: O(n)
