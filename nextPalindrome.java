@@ -1,4 +1,4 @@
-```java
+
 class Solution {
 
     static int[] nextPalindrome(int[] num) {
@@ -78,4 +78,4 @@ class Solution {
     }
 
 }
-```
+
