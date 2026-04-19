@@ -25,3 +25,6 @@ class Solution {
     }
 }
 ```
+## Time Complexity: O(n * m)
+
+## Auxiliary Space: O(1)
