@@ -40,14 +40,14 @@ A building can receive sunlight if **all buildings to its left are shorter**.
 
 ## 💻 Java Implementation
 
-```java id="n4rj6l"
+```java
 class Solution {
-    public int countBuildings(int[] arr) {
+    public int visibleBuildings(int arr[]) {
         int count = 0;
-        int maxHeight = 0;
+        int maxHeight = Integer.MIN_VALUE;
 
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > maxHeight) {
+            if (arr[i] >= maxHeight) { 
                 count++;
                 maxHeight = arr[i];
             }
@@ -56,6 +56,7 @@ class Solution {
         return count;
     }
 }
+
 ```
 
 ---
