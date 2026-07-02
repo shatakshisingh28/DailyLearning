@@ -59,7 +59,58 @@ Instead:
 Using a `HashSet` allows us to check whether a value exists in **O(1)** average time.
 
 ---
+# Code
+```java
+import java.util.HashSet;
 
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class Solution {
+
+    public static Node findIntersection(Node head1, Node head2) {
+
+        // Store all elements of second linked list
+        HashSet<Integer> set = new HashSet<>();
+
+        Node temp = head2;
+
+        while (temp != null) {
+            set.add(temp.data);
+            temp = temp.next;
+        }
+
+        // Dummy node for the answer list
+        Node dummy = new Node(-1);
+        Node tail = dummy;
+
+        // Traverse first linked list
+        temp = head1;
+
+        while (temp != null) {
+
+            // If element exists in second list
+            if (set.contains(temp.data)) {
+
+                // Add it to answer
+                tail.next = new Node(temp.data);
+                tail = tail.next;
+            }
+
+            temp = temp.next;
+        }
+
+        return dummy.next;
+    }
+}
+```
 # Code Explanation
 
 ## Step 1: Create a HashSet
